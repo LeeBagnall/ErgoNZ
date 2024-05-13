@@ -510,7 +510,8 @@ $UserSIDs = Get-ChildItem "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Pr
     }
     
     Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" BingSearchEnabled -Value 0 
-
+    #Remove Solitaire
+    Get-AppxPackage *solitairecollection* | Remove-AppxPackage
             
     #Stops the Windows Feedback Experience from sending anonymous data
     Write-Host "Stopping the Windows Feedback Experience program"
